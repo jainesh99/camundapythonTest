@@ -7,14 +7,25 @@ class Complete:
 
     def createcompletejson(self):
         data = {
-                    "workerId": socket.gethostname(),
-                    "variables": {
-
+                "workerId": socket.gethostname(),
+                "variables": {
+                    "aVariable": {
+                        "value": "Paul"
                     },
-                    "localVariables": {
-
+                    "anotherVariable": {
+                        "value": 69
+                    },
+                    "aThirdVariable": {
+                        "value": True
+                    }
+                },
+                "localVariables": {
+                    "aLocalVariable": {
+                        "value": "aStringValue"
                     }
                 }
+            }
+
         return data
 
     def sendcomplete(self, guid, host):

@@ -40,3 +40,6 @@ class FetchAndLock:
 
     def getid(self):
         return self.response_dict[0]["id"]
+
+    def getexecutionid(self):
+        return self.response_dict[0]["executionId"]

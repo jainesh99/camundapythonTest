@@ -1,6 +1,6 @@
 from fetchAndLock import FetchAndLock
 from complete import Complete
-
+import requests
 
 class ExternalTask:
 
@@ -24,3 +24,11 @@ class ExternalTask:
         print(self.fetch.getid())
         print(self.complete.sendcomplete(guid=self.fetch.getid(), host=host))
         print(self.complete.getresponse())
+
+#put local variable
+    def putvariable(self, host, varname):
+        json = {"value": "someValue", "type": "String"}
+
+        putresponse = requests.put('http://' + host + '/engine-rest/execution/' + self.fetch.getexecutionid() + '/localVariables/' + varname,json=json)
+        print(putresponse)
+        print(putresponse.text)
