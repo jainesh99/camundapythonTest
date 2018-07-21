@@ -6,12 +6,12 @@ e = ExternalTask()
 p = PyAutoGuiTest()
 
 def run():
-    e.subscribe("test-java-topic", 20000, "localhost:8080")
+    e.subscribe("test-java-topic", 20000, "10.0.0.187:8083")
 
     if e.startautomation():
         print(e.getvariable("amount"))
         p.startrpa()
-        e.completeautomation("localhost:8080")
+        e.completeautomation("10.0.0.187:8083")
     else:
         print("The task is not started")
 
